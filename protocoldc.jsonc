@@ -1,0 +1,38 @@
+{
+    {
+        "method": "requestQuotation",
+        "input": {
+            // Order id (UUID4)
+            "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            // Distribution Center id
+            "dcid": 0,
+            // Order destination
+            "destination": {
+                "latitude": 0.0,
+                "longitude": 0.0,
+            },
+            // Order size (Integer, # of pallets)
+            "size": 1,
+            // UTC timestamp of intended time of arrival (UNIX-time)
+            "arrival": 1544797442,
+            // UTC timestamp of when the order is awarded to a TC (UNIX-time)
+            "orderAwarded": 1544797442
+        },
+        "output": {
+            // Confirm request received (Boolean)
+            "success": true
+        }
+    },
+    {
+        "method": "awardOrder",
+        "input": {
+            // Order id (UUID4)
+            "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            // Boolean whether or not the DC has awarded this order to the TC
+            "isAwarded": true
+        },
+        "output": {
+            "success": true
+        }
+    }
+}
