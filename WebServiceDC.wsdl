@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="WebService" targetNamespace="https://www.example.com/dc/" 
+<wsdl:definitions name="WebService" targetNamespace="https://www.distributioncenter.com/" 
   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
-  xmlns:tns="https://www.example.com/dc/">
+  xmlns:tns="https://www.distributioncenter.com/">
   <wsdl:types>
-    <xsd:schema targetNamespace="https://www.example.com/dc/">
+    <xsd:schema targetNamespace="https://www.distributioncenter.com/">
       <xsd:element name="GiveQuotation">
         <xsd:complexType>
           <xsd:sequence>
@@ -92,7 +92,7 @@
   <wsdl:binding name="WebServiceSoap" type="tns:WebServicePortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GiveQuotation">
-      <soap:operation soapAction="https://www.example.com/dc/GiveQuotation" />
+      <soap:operation soapAction="https://www.distributioncenter.com/GiveQuotation" />
       <wsdl:input>
         <soap:body parts="parameters" use="literal" />
       </wsdl:input>
@@ -101,7 +101,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="NotifyTruckArrival">
-      <soap:operation soapAction="https://www.example.com/dc/NotifyTruckArrival" />
+      <soap:operation soapAction="https://www.distributioncenter.com/NotifyTruckArrival" />
       <wsdl:input>
         <soap:body parts="parameters" use="literal" />
       </wsdl:input>

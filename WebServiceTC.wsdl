@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="WebService" targetNamespace="https://www.example.com/tc/" 
+<wsdl:definitions name="WebService" targetNamespace="https://www.transportcompany.com/" 
   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
-  xmlns:tns="https://www.example.com/tc/">
+  xmlns:tns="https://www.transportcompany.com/">
   <wsdl:types>
-    <xsd:schema targetNamespace="https://www.example.com/tc/">
+    <xsd:schema targetNamespace="https://www.transportcompany.com/">
       <xsd:element name="RequestQuotation">
         <xsd:complexType>
           <xsd:sequence>
@@ -101,7 +101,7 @@
   <wsdl:binding name="WebServiceSoap" type="tns:WebServicePortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="RequestQuotation">
-      <soap:operation soapAction="https://www.example.com/tc/RequestQuotation" />
+      <soap:operation soapAction="https://www.transportcompany.com/RequestQuotation" />
       <wsdl:input>
         <soap:body parts="parameters" use="literal" />
       </wsdl:input>
@@ -110,7 +110,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AwardOrder">
-      <soap:operation soapAction="https://www.example.com/tc/AwardOrder" />
+      <soap:operation soapAction="https://www.transportcompany.com/AwardOrder" />
       <wsdl:input>
         <soap:body parts="parameters" use="literal" />
       </wsdl:input>
