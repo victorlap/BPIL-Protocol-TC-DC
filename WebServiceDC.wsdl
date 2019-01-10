@@ -28,7 +28,7 @@
             <xsd:element name="Output">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:element name="Success" type="xsd:bool" />
+                  <xsd:element name="Success" type="xsd:boolean" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -56,7 +56,7 @@
             <xsd:element name="Output">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:element name="Success" type="xsd:bool" />
+                  <xsd:element name="Success" type="xsd:boolean" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>

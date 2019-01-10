@@ -38,7 +38,7 @@
             <xsd:element name="Output">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:element name="Success" type="xsd:bool" />
+                  <xsd:element name="Success" type="xsd:boolean" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -52,7 +52,7 @@
               <xsd:complexType>
                 <xsd:sequence>
                   <xsd:element name="Id" type="xsd:string" />
-                  <xsd:element name="IsAwarded" type="xsd:bool" />
+                  <xsd:element name="IsAwarded" type="xsd:boolean" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -65,7 +65,7 @@
             <xsd:element name="Output">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:element name="Success" type="xsd:bool" />
+                  <xsd:element name="Success" type="xsd:boolean" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
