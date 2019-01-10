@@ -6,5 +6,8 @@ This protocol lists the proposed methods supported by both Transport Company and
 
 All communication is done using XML-Schema (default for Mendix). Please refer to the [Mendix documentation of XML-Schema](https://docs.mendix.com/refguide/xml-schemas) based communication for more information.
 
+## Tcid and Dcid
+The Tcid and Dcid in the WSDL should be just your group number, to identify the different TC's and DC's
+
 ## UUIDs
 Throughout the service, UUIDs are used to identify objects. Other actors in the business process are encouraged to use this form of identification in their own web services as well. For more information on generating UUIDs in Mendix, please visit [this](https://forum.mendixcloud.com/link/questions/87680) page.

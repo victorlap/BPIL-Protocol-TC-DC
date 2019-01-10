@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WebService" targetNamespace="https://www.example.com/tc/" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+  xmlns:tns="https://www.example.com/tc/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://www.example.com/tc/">
+      <xsd:element name="RequestQuotation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Input">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Id" type="xsd:string" />
+                  <xsd:element name="Dcid" type="xsd:long" />
+                  <xsd:element name="Destination" minOccurs="0">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="Latitude" type="xsd:decimal" />
+                        <xsd:element name="Longitude" type="xsd:decimal" />
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="Size" type="xsd:long" />
+                  <xsd:element name="Arrival" type="xsd:long" />
+                  <xsd:element name="OrderAwarded" type="xsd:long" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RequestQuotationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Output">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Success" type="xsd:bool" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AwardOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Input">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Id" type="xsd:string" />
+                  <xsd:element name="IsAwarded" type="xsd:bool" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AwardOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Output">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Success" type="xsd:bool" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestQuotationRequest">
+    <wsdl:part name="parameters" element="tns:RequestQuotation" />
+  </wsdl:message>
+  <wsdl:message name="RequestQuotationResponse">
+    <wsdl:part name="result" element="tns:RequestQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AwardOrderRequest">
+    <wsdl:part name="parameters" element="tns:AwardOrder" />
+  </wsdl:message>
+  <wsdl:message name="AwardOrderResponse">
+    <wsdl:part name="result" element="tns:AwardOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicePortType">
+    <wsdl:operation name="RequestQuotation">
+      <wsdl:documentation></wsdl:documentation>
+      <wsdl:input message="tns:RequestQuotationRequest" />
+      <wsdl:output message="tns:RequestQuotationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AwardOrder">
+      <wsdl:documentation></wsdl:documentation>
+      <wsdl:input message="tns:AwardOrderRequest" />
+      <wsdl:output message="tns:AwardOrderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestQuotation">
+      <soap:operation soapAction="https://www.example.com/tc/RequestQuotation" />
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AwardOrder">
+      <soap:operation soapAction="https://www.example.com/tc/AwardOrder" />
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServicePort" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:8080/ws/WebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WebService" targetNamespace="https://www.example.com/dc/" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+  xmlns:tns="https://www.example.com/dc/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://www.example.com/dc/">
+      <xsd:element name="GiveQuotation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Input">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Id" type="xsd:string" />
+                  <xsd:element name="Tcid" type="xsd:long" />
+                  <xsd:element name="Quotation" type="xsd:decimal" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GiveQuotationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Output">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Success" type="xsd:bool" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NotifyTruckArrival">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Input">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Id" type="xsd:string" />
+                  <xsd:element name="Truckid" type="xsd:string" />
+                  <xsd:element name="Arrival" type="xsd:long" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NotifyTruckArrivalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Output">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Success" type="xsd:bool" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GiveQuotationRequest">
+    <wsdl:part name="parameters" element="tns:GiveQuotation" />
+  </wsdl:message>
+  <wsdl:message name="GiveQuotationResponse">
+    <wsdl:part name="result" element="tns:GiveQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyTruckArrivalRequest">
+    <wsdl:part name="parameters" element="tns:NotifyTruckArrival" />
+  </wsdl:message>
+  <wsdl:message name="NotifyTruckArrivalResponse">
+    <wsdl:part name="result" element="tns:NotifyTruckArrivalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicePortType">
+    <wsdl:operation name="GiveQuotation">
+      <wsdl:documentation></wsdl:documentation>
+      <wsdl:input message="tns:GiveQuotationRequest" />
+      <wsdl:output message="tns:GiveQuotationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyTruckArrival">
+      <wsdl:documentation></wsdl:documentation>
+      <wsdl:input message="tns:NotifyTruckArrivalRequest" />
+      <wsdl:output message="tns:NotifyTruckArrivalResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GiveQuotation">
+      <soap:operation soapAction="https://www.example.com/dc/GiveQuotation" />
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyTruckArrival">
+      <soap:operation soapAction="https://www.example.com/dc/NotifyTruckArrival" />
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServicePort" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:8080/ws/WebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
