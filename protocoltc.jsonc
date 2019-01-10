@@ -4,6 +4,8 @@
         "input": {
             // Order id (UUID4)
             "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            // Transport Company id
+            "tcid": 0,
             // Quotation price (float)
             "quotation": 100.00
         },
