@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="TransportCompanyCommunication" targetNamespace="http://www.transportcompany.com/" 
+<wsdl:definitions name="TransportCompanyCommunication" targetNamespace="http://www.example.com/" 
   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
-  xmlns:tns="http://www.transportcompany.com/">
+  xmlns:tns="http://www.example.com/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.transportcompany.com/">
-      <xsd:element name="RequestQuotation">
+    <xsd:schema targetNamespace="http://www.example.com/">
+      <xsd:element name="Operation">
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="latitude" type="xsd:decimal" />
@@ -20,7 +20,7 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="RequestQuotationResponse">
+      <xsd:element name="OperationResponse">
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="Result" type="xsd:boolean" />
@@ -44,11 +44,11 @@
       </xsd:element>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="RequestQuotationRequest">
-    <wsdl:part name="parameters" element="tns:RequestQuotation" />
+  <wsdl:message name="OperationRequest">
+    <wsdl:part name="parameters" element="tns:Operation" />
   </wsdl:message>
-  <wsdl:message name="RequestQuotationResponse">
-    <wsdl:part name="result" element="tns:RequestQuotationResponse" />
+  <wsdl:message name="OperationResponse">
+    <wsdl:part name="result" element="tns:OperationResponse" />
   </wsdl:message>
   <wsdl:message name="AwardOrderRequest">
     <wsdl:part name="parameters" element="tns:AwardOrder" />
@@ -57,10 +57,10 @@
     <wsdl:part name="result" element="tns:AwardOrderResponse" />
   </wsdl:message>
   <wsdl:portType name="TransportCompanyCommunicationPortType">
-    <wsdl:operation name="RequestQuotation">
+    <wsdl:operation name="Operation">
       <wsdl:documentation></wsdl:documentation>
-      <wsdl:input message="tns:RequestQuotationRequest" />
-      <wsdl:output message="tns:RequestQuotationResponse" />
+      <wsdl:input message="tns:OperationRequest" />
+      <wsdl:output message="tns:OperationResponse" />
     </wsdl:operation>
     <wsdl:operation name="AwardOrder">
       <wsdl:documentation></wsdl:documentation>
@@ -70,8 +70,8 @@
   </wsdl:portType>
   <wsdl:binding name="TransportCompanyCommunicationSoap" type="tns:TransportCompanyCommunicationPortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="RequestQuotation">
-      <soap:operation soapAction="http://www.transportcompany.com/RequestQuotation" />
+    <wsdl:operation name="Operation">
+      <soap:operation soapAction="http://www.example.com/Operation" />
       <wsdl:input>
         <soap:body parts="parameters" use="literal" />
       </wsdl:input>
@@ -80,7 +80,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AwardOrder">
-      <soap:operation soapAction="http://www.transportcompany.com/AwardOrder" />
+      <soap:operation soapAction="http://www.example.com/AwardOrder" />
       <wsdl:input>
         <soap:body parts="parameters" use="literal" />
       </wsdl:input>
