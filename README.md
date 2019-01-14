@@ -35,7 +35,9 @@ https://raw.githubusercontent.com/victorlap/BPIL-Protocol-TC-DC/master/WebServic
 And make sure your own exposed Web Services look like the following:
 
 *NotifyTruckArrival*
+
 ![capture5](https://user-images.githubusercontent.com/1645632/51101980-5acb6080-17dd-11e9-9a11-f352ec68c84f.PNG)
 
 *GiveQuotation*
+
 ![capture6](https://user-images.githubusercontent.com/1645632/51101981-5acb6080-17dd-11e9-8f6d-4048ee8c28f4.PNG)
