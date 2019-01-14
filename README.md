@@ -21,10 +21,12 @@ https://raw.githubusercontent.com/victorlap/BPIL-Protocol-TC-DC/master/WebServic
 And make sure your own exposed Web Services look like the following:
 
 *RequestQuotations*
+
 ![whatsapp image 2019-01-11 at 15 00 09](https://user-images.githubusercontent.com/1645632/51101835-b5b08800-17dc-11e9-85b8-919efdd0b9ec.jpeg)
 
 *AwardOrder*
-`Image coming soon`
+
+![whatsapp image 2019-01-14 at 09 25 05 1](https://user-images.githubusercontent.com/1645632/51102243-797e2700-17de-11e9-9159-c66da3e52750.jpeg)
 
 ## For DCs
 Please assure you have updated to the latest version of the WSDL file from TCs (and click import):
