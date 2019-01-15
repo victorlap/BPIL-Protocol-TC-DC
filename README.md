@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/victorlap/BPIL-Protocol-TC-DC/master/WebServic
 
 And make sure your own exposed Web Services look like the following:
 
-*RequestQuotations*
+*RequestQuotation*
 
 ![whatsapp image 2019-01-11 at 15 00 09](https://user-images.githubusercontent.com/1645632/51101835-b5b08800-17dc-11e9-85b8-919efdd0b9ec.jpeg)
 
